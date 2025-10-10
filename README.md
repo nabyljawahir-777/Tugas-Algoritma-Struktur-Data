@@ -1,4 +1,4 @@
-# Tugas-Algoritma-sesi-3
+# Tugas-Algoritma
 
 ## ðŸ‘¤ Profil
 - **Nama** : Nabyl Jawahir
