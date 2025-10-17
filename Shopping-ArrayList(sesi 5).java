@@ -1,57 +1,57 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ShoppingList {
-    String itemName;
-    double price;
+public class ArrayExercise {
+    String item;
+    int no;
+    int price;
     int quantity;
+    int subtotal;
 
-    public ShoppingList(String itemName, double price, int quantity) {
-        this.itemName = itemName;
+    public ArrayExercise(int no, String item, int price, int quantity) {
+        this.no = no;
+        this.item = item;
         this.price = price;
         this.quantity = quantity;
+        this.subtotal = price * quantity;
     }
+    public static void main(String[] args) throws Exception {
+        Scanner input = new Scanner(System.in);
+        ArrayList<ArrayExercise> Task = new ArrayList<>(); // di kawitan didieu
+        String answer;
 
-    public double getSubtotal() {
-        return price * quantity;
-    }
+        int no = 1;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArrayList<ShoppingList> cart = new ArrayList<>();
+        do {
+            System.out.println("Enter the item name");
+            String item = input.nextLine();
 
-        System.out.print("Masukkan jumlah item: ");
-        int n = sc.nextInt();
-        sc.nextLine();
+            System.out.println("Enter the item prices");
+            int price = input.nextInt();
 
-        for (int i = 0; i < n; i++) {
-            System.out.println("\nItem ke-" + (i + 1));
-            System.out.print("Nama barang : ");
-            String name = sc.nextLine();
-            System.out.print("Harga (Rp)  : ");
-            double price = sc.nextDouble();
-            System.out.print("Jumlah      : ");
-            int qty = sc.nextInt();
-            sc.nextLine();
+            System.out.println("Enter the item quantity");
+            int quantity = input.nextInt();
+            input.nextLine();
 
-            cart.add(new ShoppingList(name, price, qty));
+            Task.add(new ArrayExercise(no, item, price, quantity));
+            no++;
+
+            System.out.println("Enter the item again? (yes/no)");
+            answer = input.nextLine();
+
+        } while (answer.equalsIgnoreCase("yes"));
+
+        System.err.println("-----------------------------------------------");
+        System.out.printf("%-4s %-10s %-10s %-10s %-10s\n","No", "Item", "Price", "Quantity", "Subtotal");
+        System.out.println("-----------------------------------------------");
+
+        int total = 0;
+        for (ArrayExercise i : Task) {
+           System.out.printf("%-4d %-10s %-10d %-10d %-10d\n", i.no, i.item, i.price, i.quantity, i.subtotal);
+           total += i.subtotal;
         }
-
-        System.out.println("\n===============================================");
-        System.out.printf("%-10s %-10s %-10s %-10s%n", "Item", "Price", "Qty", "Subtotal");
-        System.out.println("===============================================");
-
-        double total = 0;
-        for (ShoppingList x : cart) {
-            System.out.printf("%-10s %-10.2f %-10d %-10.2f%n",
-                    x.itemName, x.price, x.quantity, x.getSubtotal());
-            total += x.getSubtotal();
-        }
-
-        System.out.println("===============================================");
-        System.out.printf("%-10s %-10s %-10s %-10.2f%n", "", "", "TOTAL:", total);
-        System.out.println("===============================================");
-
-        sc.close();
+        System.out.println("-----------------------------------------------");
+        System.out.printf("Total: %d\n", total);
+        input.close();
     }
 }
