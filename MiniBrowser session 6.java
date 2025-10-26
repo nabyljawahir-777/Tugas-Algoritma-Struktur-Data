@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class MiniBrowser {
+public class MiniBrowser session 6{
     public static void main(String[] args) throws Exception {
         Scanner inputx = new Scanner(System.in);
         String answer = "1";
