@@ -1,14 +1,14 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class StacknQueueProject1 {
+public class ShoppingStack(sesi6nomor1) {
     String item;
     int no;
     int price;
     int qty;
     int subtotal;
 
-    public StacknQueueProject1 (int no, String item, int price, int qty) {
+    public ShoppingStack(sesi6nomor1) (int no, String item, int price, int qty) {
         this.no=no;
         this.item=item;
         this.price=price;
