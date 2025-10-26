@@ -20,7 +20,7 @@ public class ShoppingStack(sesi6nomor1) {
             Scanner input = new Scanner(System.in);
              String answer;
             int no = 1;
-            Stack<StacknQueueProject1> Task = new Stack <>();
+            Stack<ShoppingStack(sesi6nomor1)> Task = new Stack <>();
 
             do{
                 System.out.println("\n==========MENU========== \n1. Add Item \n2. Show Current Item \n3. Show All Items \n4. Remove Last Item \n5. Done \n ========================");
@@ -44,13 +44,13 @@ public class ShoppingStack(sesi6nomor1) {
 
                         input.nextLine();
 
-                        Task.push(new StacknQueueProject1(no, item, price, qty));no++;
+                        Task.push(new ShoppingStack(sesi6nomor1)(no, item, price, qty));no++;
                         System.err.println("Item Added to Queue");
                         break;
                 
                     case "2":
                          if (!Task.empty()) {
-                        StacknQueueProject1 top = Task.peek();
+                        ShoppingStack(sesi6nomor1) top = Task.peek();
                         System.out.println("Top item: " + top.item + " (Qty: " + top.qty + ")");
                     } else {
                         System.out.println("Queue is empty!");
@@ -65,7 +65,7 @@ public class ShoppingStack(sesi6nomor1) {
                         System.out.printf("%-10s %-10s %-10s %-10s %-10s\n", "No", "Item", "Price", "Qty", "Subtotal");
                         System.out.println("__________________________________________________________________");
                         int total = 0;
-                        for (StacknQueueProject1 i : Task) {
+                        for (ShoppingStack(sesi6nomor1) i : Task) {
                             System.out.printf("%-10d %-10s %-10d %-10d %-10d\n", i.no, i.item, i.price, i.qty, i.subtotal);
                             total += i.subtotal;
                         }
@@ -76,7 +76,7 @@ public class ShoppingStack(sesi6nomor1) {
 
                     case "4":
                         if (!Task.empty()) {
-                        StacknQueueProject1 removed = Task.pop();
+                        ShoppingStack(sesi6nomor1) removed = Task.pop();
                         System.out.println("Item removed: " + removed.item);
                     } else {
                         System.out.println("Queue is empty!");
